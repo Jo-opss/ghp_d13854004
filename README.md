@@ -1,27 +1,22 @@
 # ghp_d13854004
-# Load required packages
-library(readr)
-library(dplyr)
-library(lubridate)
+# Reproducible Data Analysis Assignment
 
-# Read the dataset 
-dengue_data <- read_csv("C:/Users/user/Downloads/dengue_assignment.csv")
-# Check column names to know the correct ones
-names(dengue_data)
-# Filter for year 2014
-dengue_2014 <- dengue_data %>%
-  filter(year(week_start) == 2014)
-View(week)
-# Filter for year 2014 and sum the cases
-dengue_2014 <- dengue_data %>%
-  filter(year == 2014)
-View(dengue_2014)
+## Objective
+This analysis determines the total reported dengue cases in Taiwan for 2014.
 
-# Filter data for the year 2014
-dengue_2014 <- dengue_data %>%
-  filter(year == 2014)
+## Dataset
+The dataset `dengue_assignment.csv` contains weekly dengue case reports from 2004 to 2025, provided by the Taiwan Centers for Disease Control. 
 
-# Check for case column name and calculate total (replace 'cases' with the actual column name)
-total_cases_2014 <- sum(dengue_2014$case_number, na.rm = TRUE)
-# Print result
-print(paste("Total dengue cases reported in 2014:", total_cases_2014))
+## Methods
+- Imported the dataset using `read.csv()`.
+- Filtered records from 2014.
+- Summed the `new_cases` column to obtain the total number of cases.
+
+## Results
+Total dengue cases reported in 2014:  15747
+
+## Reproducibility
+To replicate this analysis, ensure the following R packages are installed:
+```r
+install.packages(c("tidyverse", "dplyr","readr", "lubridate"))
+
